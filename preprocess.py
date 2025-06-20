@@ -10,7 +10,7 @@ CSV_FILE = os.path.join(DATA_DIR, "landmarks.csv")
 
 # Load dataset
 df = pd.read_csv(CSV_FILE)
-print("📄 Loaded CSV with shape:", df.shape)
+print("Loaded CSV with shape:", df.shape)
 
 # Separate features and labels
 X = df.drop("label", axis=1).values
@@ -26,7 +26,7 @@ y_encoded = le.fit_transform(y)
 # Save label classes for reference
 label_classes_path = os.path.join(DATA_DIR, "label_classes.npy")
 np.save(label_classes_path, le.classes_)
-print("🧾 Saved label classes to:", label_classes_path)
+print("Saved label classes to:", label_classes_path)
 
 # Shuffle data
 X, y_encoded = shuffle(X, y_encoded, random_state=42)
